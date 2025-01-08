@@ -31,6 +31,7 @@ Before running this application, ensure you have:
 
 ---
 
+##
 ## Installation and Setup
 
 ### **1. Clone the Repository**
@@ -62,7 +63,7 @@ docker-compose up --build
 ```
 ---
 
-### 3. API ENDPOINTS
+## API ENDPOINTS
 
 #### 1. Shorten URL
 #### Method: POST
@@ -110,14 +111,17 @@ docker-compose up --build
 }
 
 ```
+
+## Additional Information
+### Applciation is Exposed at 5000 port in localhost
 ---
-### 4. Tests
+## Tests
 
 ```bash
 go test -v
 ```
 ---
-### 5. Contact
+### Contact
 ##### Author: V. D. Panduranga Sai Guptha
 ##### Email: saiguptha_v@srmap.edu.in
 ##### GitHub: github.com/saiguptha2003
