@@ -66,7 +66,7 @@ docker run -d -p 5000:5000 --name url-shortener-container url-shortener-api
 
 #### Method 3 Docker-compose Execution
 ```bash
-docker-compose up --build
+docker-compose up  -d --build 
 ```
 ---
 
