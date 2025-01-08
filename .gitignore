@@ -17,11 +17,6 @@ vendor/
 # Logs
 *.log
 
-# Ignore dependencies downloaded by Go
-/go/pkg/
-go.sum
-go.mod
-
 # IDE and Editor files
 .vscode/
 .idea/
