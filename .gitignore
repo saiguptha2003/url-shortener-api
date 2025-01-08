@@ -1,0 +1,48 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Test binary, coverage, and profiling files
+*.test
+*.coverprofile
+*.cov
+
+# Go vendor folder (if using Go Modules, this can be omitted)
+vendor/
+
+# Logs
+*.log
+
+# Ignore dependencies downloaded by Go
+/go/pkg/
+go.sum
+go.mod
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Docker files
+*.env
+docker-compose.override.yml
+
+# Ignore uploaded Docker images
+*.tar
+*.img
+
+# Cache files and temp files
+*.tmp
+*.cache
+*.bak
+*.backup
+*.swp
