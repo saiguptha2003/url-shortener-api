@@ -1,0 +1,35 @@
+# Ignore Go-specific files
+*.log
+*.exe
+*.out
+*.tmp
+*.sum
+*.mod
+
+# Ignore build artifacts
+/build
+/bin
+url-shortener-api
+
+# Ignore dependency directories
+/vendor
+
+# Ignore version control files
+.git
+.gitignore
+
+# Ignore Docker-related files
+Dockerfile
+.dockerignore
+
+# Ignore IDE/editor-specific files
+.idea
+.vscode
+*.swp
+*.swo
+*.bak
+*~
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
