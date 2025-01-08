@@ -61,7 +61,7 @@ go run main.go
 
 ```bash
 docker build -t url-shortener-api .
-docker run -p 5000:5000 url-shortener-api
+docker run -d -p 5000:5000 --name url-shortener-container url-shortener-api 
 ```
 
 #### Method 3 Docker-compose Execution
