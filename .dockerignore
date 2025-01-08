@@ -3,13 +3,9 @@
 *.exe
 *.out
 *.tmp
-*.sum
-*.mod
 
-# Ignore build artifacts
-/build
+
 /bin
-url-shortener-api
 
 # Ignore dependency directories
 /vendor

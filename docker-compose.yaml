@@ -2,14 +2,19 @@ version: '3.8'
 
 services:
   url-shortener:
-    build:
-      context: .
-      dockerfile: dockerfile
+    image: pandusa2003/url-shortener-api  # Pull the image from Docker Hub
     container_name: url-shortener-api
     ports:
-      - "5000:5000" # Map local port 8080 to container port 8080
+      - "5000:5000"  # Map local port 5000 to container port 5000
     volumes:
-      - .:/app # Mount the current directory to /app in the container
+      - .:/app  # Mount the current directory to /app in the container
     restart: always
     environment:
-      - GIN_MODE=release # Set Gin framework mode to production
+      - GIN_MODE=release  # Set Gin framework mode to production
+      - PORT=5000  # Optionally add a custom port variable
+    networks:
+      - url-shortener-network  # (Optional) Add a network if needed for inter-container communication
+
+networks:
+  url-shortener-network:  # (Optional) Define the custom network
+    driver: bridge
