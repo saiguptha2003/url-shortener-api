@@ -31,7 +31,14 @@ Before running this application, ensure you have:
 
 ---
 
-##
+## DOCKER IMAGE PUBLIC
+```bash
+https://hub.docker.com/r/pandusa2003/url-shortener-api
+```
+command to pull image
+```bash
+docker pull pandusa2003/url-shortener-api
+```
 ## Installation and Setup
 
 ### **1. Clone the Repository**
