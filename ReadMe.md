@@ -36,7 +36,7 @@ Before running this application, ensure you have:
 
 ### **1. Clone the Repository**
 ```bash
-git clone https://github.com/your-username/url-shortener-api.git
+git clone https://github.com/saiguptha2003/url-shortener-api.git
 cd url-shortener
 ```
 ---
