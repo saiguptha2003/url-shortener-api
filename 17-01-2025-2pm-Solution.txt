@@ -1,0 +1,42 @@
+function: list, map : store 
+
+list : time, bool, shorlen -key 
+
+1- hit 
+0 - 24 - no hits 
+ url : shortenUrl -- list with time.now bool 0 
+
+ redirectUrl : if user tries rediect database ---> boolean value to the 1 if no is 0 
+ if redirect boolean 1 time =time.now() at redriect time 
+
+ go routine 
+ function to check list hitornot 
+
+ presenttime =time.now()
+ for -- range list
+
+if hitornot 1 0
+
+list=created-== 24 hours 
+
+shortenurl
+
+request 17 jan 12:00pm created 0
+17 jan 1:00 am 1
+17 jan 2 am 0
+18 2 am 
+
+
+
+modified Solution 
+
+
+ShortenUrl ===> create the log with createdat,shorten url 
+redirecturl ===> if request then modify the createat time to present time it is time.now()
+
+in thread will run for every 1 minute after its previous execution 
+steps :
+1. checks the present time and createdat time for each url in log list
+2. if more than 24 hours then it removes the url from the store and also from the clickstore 
+3. update the logstore 
+4. if not just update the logstore
