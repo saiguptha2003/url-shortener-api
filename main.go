@@ -3,13 +3,12 @@ package main
 import (
 	"url-shortener-api/handlers"
 	"url-shortener-api/models"
-
 	"github.com/gin-gonic/gin"
 )
 
-
 func SetupRouter() *gin.Engine {
 	urlShortener := models.NewURLShortener()
+
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
@@ -22,9 +21,11 @@ func SetupRouter() *gin.Engine {
 			"note": "Use /shorten to shorten URLs. For more details, check the other endpoints.",
 		})
 	})
+
 	r.POST("/shorten", func(c *gin.Context) {
 		handlers.ShortenURL(c, urlShortener)
 	})
+
 	r.GET("/:shortURL", func(c *gin.Context) {
 		handlers.RedirectToOriginalURL(c, urlShortener)
 	})
@@ -33,9 +34,10 @@ func SetupRouter() *gin.Engine {
 		handlers.GetTopDomains(c, urlShortener)
 	})
 
+	go handlers.RemoveLogData(urlShortener)
+
 	return r
 }
-
 
 func main() {
 	r := SetupRouter()
