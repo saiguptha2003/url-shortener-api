@@ -4,12 +4,13 @@ import (
 	"log"
 	"time"
 	"url-shortener-api/models"
+	"url-shortener-api/utils"
 )
 
 //**********************************************************************************************************************
-// As my assumption in the Interview 
+// As my assumption in the Interview
 // taking a bool variable may not work so that i changed the logic now this will work with the createdat time
-// Only createdat time will be checked on the removelogdata and for each redirect the time will be updated in the createdAt time 
+// Only createdat time will be checked on the removelogdata and for each redirect the time will be updated in the createdAt time
 //**********************************************************************************************************************
 
 
@@ -30,7 +31,7 @@ func RemoveLogData(urlShortener *models.URLShortener) {
 					newLogData = append(newLogData, logEntry)
 				} else {
 					if _, exists := urlShortener.Store[logEntry.ShortenUrl]; exists {
-						domain := logEntry.ShortenUrl
+						domain := utils.GetDomain(urlShortener.Store[logEntry.ShortenUrl])
 
 						if count, found := urlShortener.ClickStore[domain]; found {
 							if count > 1 {
