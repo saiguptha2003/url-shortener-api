@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"net/http"
+	"time"
 	"url-shortener-api/models"
 	"url-shortener-api/utils"
 
@@ -34,9 +35,14 @@ func ShortenURL(c *gin.Context, urlShortener *models.URLShortener) {
 	shortURL := utils.GenerateShortURL()
 	urlShortener.Store[shortURL] = req.OriginalURL
 
-	// Update ClickStore for metrics
+	// Update ClickStore and LogData
 	domain := utils.GetDomain(req.OriginalURL)
 	urlShortener.ClickStore[domain]++
+
+	urlShortener.LogData = append(urlShortener.LogData, models.Log{
+		CreatedAt:  time.Now().Format(time.RFC3339),
+		ShortenUrl: shortURL,
+	})
 
 	c.JSON(http.StatusOK, gin.H{"short_url": shortURL})
 }
