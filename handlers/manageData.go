@@ -27,7 +27,7 @@ func RemoveLogData(urlShortener *models.URLShortener) {
 			newLogData := []models.Log{}
 			for _, logEntry := range urlShortener.LogData {
 				createdAt, _ := time.Parse(time.RFC3339, logEntry.CreatedAt)
-				if now.Sub(createdAt) < 1*time.Minute {  
+				if now.Sub(createdAt) < 24*time.Hour {  
 					newLogData = append(newLogData, logEntry)
 				} else {
 					if _, exists := urlShortener.Store[logEntry.ShortenUrl]; exists {
